@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Gerenciamento de Computadores</title>
+</head>
+<body>
+    <header>
+        <h1>Gerenciamento de Computadores</h1>
+    </header>
+
+    <main>
+        <section class="section-form">
+            <form id="computerForm">
+                <label for="id">Patrimônio:</label>
+                <input type="number" id="id" name="id" required>
+
+                <label for="status">Tipo</label>
+                <select id="status" name="status" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="Notebook">Notebook</option>
+                    <option value="Desktop">Desktop</option>
+                </select>
+
+                <label for="model">Modelo:</label>
+                <select id="model" name="model" required>
+                    <option value="" disabled selected>Selecione o modelo</option>
+                    <option value="Compaq">Compaq</option>
+                    <option value="Positivo">Positivo</option>
+                    
+                </select>
+
+                <label for="entryDate">Data de Entrada:</label>
+                <input type="date" id="entryDate" name="entryDate" required>
+
+                <label for="Resp">Responsável</label>
+                <input type="text" id="Resp" name="Resp" required>
+
+                <label for="Setor">Setor</label>
+                <input type="text" id="Setor" name="Setor" required>
+
+                <label for="pronto">Status:</label>
+                <select id="pronto" name="pronto" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="ativo">Ativo</option>
+                    <option value="desativado">Desativado</option>
+                    <option value="Substituído">Substituído</option>
+                </select>
+
+                <label for="exitDate">Data de Saída:</label>
+                <input type="date" id="exitDate" name="exitDate">
+
+                <label for="saidamt">Motivo da Saída</label>
+                <select id="saidamt" name="saidamt">
+                    <option value="">Nenhum</option>
+                    <option value="Defeito">Defeito</option>
+                    <option value="Upgrade">Upgrade</option>
+                    <option value="Troca">Troca</option>
+                </select>
+
+                <label for="Patrimonio">Computador Substituído (Patrimônio)</label>
+                <input type="number" id="Patrimonio" name="Patrimonio">
+
+                <label for="obs">Observações:</label>
+                <input type="text" id="obs" name="obs" placeholder="Ex: Defeito, etc...">
+                <button type="submit">Adicionar</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Lista de Computadores</h2>
+
+            <div class="pesquisa">
+                <label for="pesquisa">Pesquisar:</label>
+                <input type="search" id="pesquisa" placeholder="Pesquisar...">
+
+                <select id="vinidobubumguloso" name="vinidobubumguloso">
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="Positivo">Positivo</option>
+                    <option value="Compaq">Compaq</option>
+                </select>
+                <select id="edbrock" name="edbrock">
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="Defeito">Defeito</option>
+                    <option value="Upgrade">Upgrade</option>
+                    <option value="Troca">Troca</option>
+                </select>
+
+                <button type="button" onclick="pesquisar()">Pesquisar</button>
+                <button type="button" onclick="botaodlt()">Deletar</button>
+                <button type="button" onclick="botaoedit()">Editar</button>
+            </div>
+
+            <div id="loading" style="display:none;">Carregando...</div>
+
+            <table id="computerTable">
+                <thead>
+                    <tr>
+                        <th>Patrimônio</th>
+                        <th>Tipo</th>
+                        <th>Modelo</th>
+                        <th>Data Entrada</th>
+                        <th>Responsável</th>
+                        <th>Setor</th>
+                        <th>Status</th>
+                        <th>Data Saída</th>
+                        <th>Motivo Saída</th>
+                        <th>Substituído</th>
+                        <th>Observações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="/js/teste3.js"></script>
+</body>
+</html>
